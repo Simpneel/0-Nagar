@@ -1,6 +1,15 @@
 #pragma once
 #include "String.h"
 
+/*
+
+This file will have the classes for all our characters, the first one called NPC dictates a basic layout of the
+data we will have in the game being carried around for these characters. 
+To tinker around with the specs of the characters as you see them when it runs, you can go to the specific class of 
+the character, and find the aspect of character you wish to change, the text in quotes is safe to touch and doesn't cause errors. 
+As it expands, we can have a list of different dialogues and favours for each character instead of just one. 
+
+*/
 class NPC {
 private:
 	String f_name, l_name;
@@ -9,6 +18,12 @@ private:
 public:
 	float money_rec, energy_req, rep_change;
 	int* char_appearance_chance;
+
+	//functions
+	String CharDialogue() { return char_dialogue; }
+	String CharDescription() { return char_desc; }
+	//int CharAppearChance(int CharDaysTillLastApp) { return *char_appearance_chance; }
+
 };
 
 class Stabby : public NPC {
