@@ -1,6 +1,7 @@
 
 #include "raylib.h"
-#include "draftNPC.h"
+#include "Game.h"
+
 
 
 int main(void)
@@ -16,14 +17,26 @@ int main(void)
     Rectangle repMeter = { 1000, 35, 600, 75 };
     Rectangle enrgMeter = { 20, 400, 75, 500 };
     
+    //Initialize placeholder images
+    Image temp_goku, temp_vegeta, temp_picollo, temp_gohan;
+    
+    //Initialize textures
+    Texture2D texture_goku;
+    Texture2D texture_vegeta;
 
-    Image actorImg;
-    Texture2D actorTexture;
-    actorImg = LoadImage("ref/goku.png");
-    actorTexture = LoadTextureFromImage(actorImg);
+    //Load in Textures
+    temp_goku = LoadImage("ref/goku.png");
+    temp_vegeta = LoadImage("ref/vegeta.png");
+    ImageResize(&temp_vegeta, temp_goku.width, temp_goku.height);
+
+    texture_goku = LoadTextureFromImage(temp_goku);
+    texture_vegeta = LoadTextureFromImage(temp_vegeta);
+
+
     int tempX = 50, tempY = 50;
-    NPC stabbyTest;
 
+    //Stabby stabby;
+    
 
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
@@ -53,9 +66,10 @@ int main(void)
         DrawRectangleLinesEx(enrgMeter, 5, DARKGREEN); DrawText("ENERGY", 15, 950, 25, DARKGREEN);
         
         
+        
 
-
-        DrawTexture(actorTexture, 390, 500, WHITE);
+        DrawTexture(texture_goku, 390, 500, WHITE);
+        DrawTexture(texture_vegeta, 1250, 500, WHITE);
         EndDrawing();
         //----------------------------------------------------------------------------------
     }

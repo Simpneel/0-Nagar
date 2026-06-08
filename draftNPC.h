@@ -1,6 +1,6 @@
 #pragma once
 #include "String.h"
-
+#include "raylib.h"
 /*
 
 This file will have the classes for all our characters, the first one called NPC dictates a basic layout of the
@@ -12,12 +12,19 @@ As it expands, we can have a list of different dialogues and favours for each ch
 */
 class NPC {
 private:
-	String f_name, l_name;
-	String char_desc, char_favour, char_dialogue;
+	const char* f_name;
+	const char* l_name;
+	const char* char_desc;
+	const char* char_favour;
+	const char* char_dialogue;
+
 
 public:
+
+	bool isActive = false;	//	True/False check to see if NPC is currently initialized
 	float money_rec, energy_req, rep_change;
-	int* char_appearance_chance;
+	int* char_appearance_chance = 0;
+	Texture2D char_texture;
 
 	//functions
 	String CharDialogue() { return char_dialogue; }
@@ -26,20 +33,24 @@ public:
 
 	NPC();
 	~NPC();
-	NPC(String f_name, String l_name);
+	const char* GetCharLastName(const char* f_name);
+	const char* GetCharDesc(const char* f_name);
+	const char* GetCharDialogue(const char* f_name);
+	const char* GetCharFavour(const char* f_name);
 
+	void SetActive(bool isActive);
 
 
 };
 
 class Stabby : public NPC {
-private:
-	String f_name = "|Stabby";
-	String l_name = " ?|";
-	String char_desc = "|Covered in blood|";
-	String char_favour = "Delete CCTV footage from the previous night";
-	String char_dialogue = "This is... uhhh. . . cranberry juice?";
 public:
+
+	const char* f_name = "|Stabby";
+	const char* l_name = " ?|";
+	const char* char_desc = "|Covered in blood|";
+	const char* char_favour = "Delete CCTV footage from the previous night";
+	const char* char_dialogue = "This is... uhhh. . . cranberry juice?";
 	float money_rec = 500;
 	float rep_change = -3;
 
