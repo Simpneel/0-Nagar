@@ -1,5 +1,6 @@
 
 #include "raylib.h"
+#include "draftNPC.h"
 
 
 int main(void)
@@ -21,6 +22,8 @@ int main(void)
     actorImg = LoadImage("ref/goku.png");
     actorTexture = LoadTextureFromImage(actorImg);
     int tempX = 50, tempY = 50;
+    NPC stabbyTest;
+
 
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second

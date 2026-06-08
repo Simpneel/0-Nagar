@@ -24,6 +24,12 @@ public:
 	String CharDescription() { return char_desc; }
 	//int CharAppearChance(int CharDaysTillLastApp) { return *char_appearance_chance; }
 
+	NPC();
+	~NPC();
+	NPC(String f_name, String l_name);
+
+
+
 };
 
 class Stabby : public NPC {
@@ -36,6 +42,11 @@ private:
 public:
 	float money_rec = 500;
 	float rep_change = -3;
+
+	//functions
+	Stabby();
+	~Stabby();
+
 };
 
 class Victor : public NPC {
@@ -48,6 +59,10 @@ private:
 public:
 	float money_rec = 420;
 	float rep_change = -5;
+
+	//functions
+	Victor();
+	~Victor();
 };
 
 class Hardick : public NPC {
@@ -60,6 +75,11 @@ private:
 public:
 	float money_rec = 50;
 	float rep_change = -5;
+
+	//functions
+	Hardick();
+	~Hardick();
+
 };
 
 class Sharma : public NPC {
@@ -72,6 +92,10 @@ private:
 public:
 	float money_rec = 380;
 	float rep_change = -1;
+
+	//functions
+	Sharma();
+	~Sharma();
 };
 
 class Monty : public NPC {
@@ -84,6 +108,11 @@ private:
 public:
 	float money_rec = 4;
 	float rep_change = -4;
+
+	//functions
+	Monty();
+	~Monty();
+
 };
 
 class Jonty : public NPC {
@@ -96,6 +125,11 @@ private:
 public:
 	float money_rec = 1;
 	float rep_change = -1;
+
+	//functions
+	Jonty();
+	~Jonty();
+
 };
 
 class Jain : public NPC {
@@ -108,6 +142,11 @@ private:
 public:
 	float money_rec = 200;
 	float rep_change = -2;
+
+	//functions
+	Jain();
+	~Jain();
+
 };
 
 class Billu : public NPC {
@@ -120,4 +159,8 @@ private:
 public:
 	float money_rec = 120;
 	float rep_change = 0;
+
+	//functions
+	Billu();
+	~Billu();
 };
