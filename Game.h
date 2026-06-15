@@ -3,9 +3,12 @@
 
 class Game {
 
-public:
+public:		//Publicly visible variables for the gameloop go here
+
 	bool keepGameRunning = true;
 	bool winCheck = false;
+
+private:	//Private variables for gameloop functioning go here
 
 	int daysPassed = 0;
 	float playerMoney = 0.0;
@@ -20,6 +23,12 @@ public:
 	Jonty jonty;
 	Jain jain;
 	Billu billu;
+
+public:		//Gameloop functions go here
+
+	Game();
+	~Game();
+	void GameLoop();
 
 
 };

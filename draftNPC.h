@@ -26,7 +26,7 @@ public:
 	int* char_appearance_chance = 0;
 	Texture2D char_texture;
 
-	//functions
+	//functions+
 	String CharDialogue() { return char_dialogue; }
 	String CharDescription() { return char_desc; }
 	//int CharAppearChance(int CharDaysTillLastApp) { return *char_appearance_chance; }
